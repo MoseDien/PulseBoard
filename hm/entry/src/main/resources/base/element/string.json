@@ -1,0 +1,33 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "展示朋友最近的生活状态"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "PulseBoard main ability"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "近况"
+    },
+    {"name": "home_title", "value": "PulseBoard · 近况"},
+    {"name": "home_subtitle", "value": "你在意的人，最近都在做什么"},
+    {"name": "loading_updates", "value": "正在收集近况…"},
+    {"name": "empty_users", "value": "暂时没有找到朋友"},
+    {"name": "detail_loading", "value": "正在打开近况…"},
+    {"name": "detail_missing", "value": "没有找到这位朋友"},
+    {"name": "settings", "value": "设置"},
+    {"name": "server", "value": "服务器"},
+    {"name": "server_mock", "value": "本地 Mock"},
+    {"name": "server_tokyo", "value": "东京节点"},
+    {"name": "server_singapore", "value": "新加坡节点"},
+    {"name": "home_style", "value": "首页风格"},
+    {"name": "style_list", "value": "列表"},
+    {"name": "style_dynamic", "value": "动态"},
+    {"name": "page_animation", "value": "页面动画"},
+    {"name": "enabled", "value": "开启"},
+    {"name": "disabled", "value": "关闭"}
+  ]
+}

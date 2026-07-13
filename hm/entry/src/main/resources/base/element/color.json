@@ -1,0 +1,37 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#F4F3ED"
+    },
+    {"name": "page_bg", "value": "#F4F3ED"},
+    {"name": "ink", "value": "#171A17"},
+    {"name": "muted", "value": "#777B75"},
+    {"name": "card", "value": "#FFFEFA"},
+    {"name": "fresh", "value": "#3DBA68"},
+    {"name": "fresh_text", "value": "#268A49"},
+    {"name": "stale", "value": "#A8AAA6"},
+    {"name": "fresh_surface", "value": "#E1F6E7"},
+    {"name": "stale_surface", "value": "#E9E9E6"},
+    {"name": "status_stale_surface", "value": "#E7E7E3"},
+    {"name": "fresh_border", "value": "#D5EACF"},
+    {"name": "stale_border", "value": "#E4E3DE"},
+    {"name": "keyword", "value": "#526147"},
+    {"name": "keyword_surface", "value": "#DFF0C7"},
+    {"name": "dim_overlay", "value": "#66000000"},
+    {"name": "shadow", "value": "#14000000"},
+    {"name": "panel_surface", "value": "#F2F1EC"},
+    {"name": "panel_shadow", "value": "#33000000"},
+    {"name": "status_shadow", "value": "#553DBA68"},
+    {"name": "book_shadow", "value": "#22000000"},
+    {"name": "transparent", "value": "#00000000"}
+    ,{"name": "node_purple", "value": "#8B5CF6"}
+    ,{"name": "node_blue", "value": "#3B82F6"}
+    ,{"name": "node_orange", "value": "#F97316"}
+    ,{"name": "node_pink", "value": "#EC4899"}
+    ,{"name": "node_yellow", "value": "#EAB308"}
+    ,{"name": "node_cyan", "value": "#06B6D4"}
+    ,{"name": "node_indigo", "value": "#6366F1"}
+    ,{"name": "node_coral", "value": "#F43F5E"}
+  ]
+}

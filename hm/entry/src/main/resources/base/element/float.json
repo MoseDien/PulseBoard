@@ -1,0 +1,56 @@
+{
+  "float": [
+    {"name": "nav_title_height", "value": "44vp"},
+    {"name": "nav_action_size", "value": "44vp"},
+    {"name": "list_horizontal_padding", "value": "18vp"},
+    {"name": "list_top_padding", "value": "14vp"},
+    {"name": "list_bottom_padding", "value": "18vp"},
+    {"name": "card_padding", "value": "16vp"},
+    {"name": "detail_top_padding", "value": "12vp"},
+    {"name": "detail_side_padding", "value": "16vp"}
+    ,{"name": "space_1", "value": "1vp"}
+    ,{"name": "space_2", "value": "2vp"}
+    ,{"name": "space_3", "value": "3vp"}
+    ,{"name": "space_5", "value": "5vp"}
+    ,{"name": "space_7", "value": "7vp"}
+    ,{"name": "space_8", "value": "8vp"}
+    ,{"name": "space_9", "value": "9vp"}
+    ,{"name": "space_10", "value": "10vp"}
+    ,{"name": "space_12", "value": "12vp"}
+    ,{"name": "space_13", "value": "13vp"}
+    ,{"name": "space_14", "value": "14vp"}
+    ,{"name": "space_20", "value": "20vp"}
+    ,{"name": "space_22", "value": "22vp"}
+    ,{"name": "space_26", "value": "26vp"}
+    ,{"name": "radius_3", "value": "3vp"}
+    ,{"name": "radius_7", "value": "7vp"}
+    ,{"name": "radius_8", "value": "8vp"}
+    ,{"name": "radius_10", "value": "10vp"}
+    ,{"name": "radius_12", "value": "12vp"}
+    ,{"name": "radius_18", "value": "18vp"}
+    ,{"name": "radius_22", "value": "22vp"}
+    ,{"name": "font_8", "value": "8fp"}
+    ,{"name": "font_9", "value": "9fp"}
+    ,{"name": "font_10", "value": "10fp"}
+    ,{"name": "font_11", "value": "11fp"}
+    ,{"name": "font_12", "value": "12fp"}
+    ,{"name": "font_13", "value": "13fp"}
+    ,{"name": "font_14", "value": "14fp"}
+    ,{"name": "font_15", "value": "15fp"}
+    ,{"name": "font_16", "value": "16fp"}
+    ,{"name": "font_18", "value": "18fp"}
+    ,{"name": "font_19", "value": "19fp"}
+    ,{"name": "font_20", "value": "20fp"}
+    ,{"name": "font_22", "value": "22fp"}
+    ,{"name": "font_26", "value": "26fp"}
+    ,{"name": "font_48", "value": "48fp"}
+    ,{"name": "font_54", "value": "54fp"}
+    ,{"name": "size_24", "value": "24vp"}
+    ,{"name": "size_32", "value": "32vp"}
+    ,{"name": "size_38", "value": "38vp"}
+    ,{"name": "size_104", "value": "104vp"}
+    ,{"name": "size_142", "value": "142vp"}
+    ,{"name": "size_150", "value": "150vp"}
+    ,{"name": "size_190", "value": "190vp"}
+  ]
+}

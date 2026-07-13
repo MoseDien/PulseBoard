@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "林屿",
+    "handle": "@island_lin",
+    "avatar": "屿",
+    "avatarColor": "#DCE8C8",
+    "bio": "在城市里采集安静的时刻。",
+    "lastUpdated": "2026-07-08",
+    "mood": "最近很松弛",
+    "books": [
+      {"title": "献给阿尔吉侬的花束", "author": "丹尼尔·凯斯", "color": "#263238", "accent": "#E8D7B4"},
+      {"title": "禅与摩托车维修艺术", "author": "罗伯特·波西格", "color": "#D9644A", "accent": "#FFF2DC"},
+      {"title": "树上的男爵", "author": "卡尔维诺", "color": "#55735A", "accent": "#F0EBCF"}
+    ],
+    "movies": [
+      {"title": "完美的日子", "meta": "昨天 · ★ 4.5", "emoji": "🌿"},
+      {"title": "机器人之梦", "meta": "7月3日 · ★ 5.0", "emoji": "🤖"}
+    ],
+    "places": [
+      {"city": "泉州", "note": "古城慢走 · 6月", "emoji": "🛕"},
+      {"city": "厦门", "note": "海边骑行 · 5月", "emoji": "🌊"}
+    ],
+    "podcasts": [
+      {"title": "忽左忽右：城市里的漫游者", "meta": "42 分钟", "emoji": "🎧"},
+      {"title": "随机波动：如何好好休息", "meta": "58 分钟", "emoji": "☕"}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "陈墨",
+    "handle": "@inkchen",
+    "avatar": "墨",
+    "avatarColor": "#F1D6C8",
+    "bio": "产品设计师，业余面包观察员。",
+    "lastUpdated": "2026-07-03",
+    "mood": "忙里偷闲",
+    "books": [
+      {"title": "设计中的设计", "author": "原研哉", "color": "#EFEDE7", "accent": "#CE3038"},
+      {"title": "毫无意义的工作", "author": "大卫·格雷伯", "color": "#2C446F", "accent": "#F5D86B"}
+    ],
+    "movies": [
+      {"title": "雄狮少年 2", "meta": "7月1日 · ★ 4.0", "emoji": "🦁"},
+      {"title": "沙丘 2", "meta": "6月12日 · ★ 4.5", "emoji": "🏜️"}
+    ],
+    "places": [
+      {"city": "景德镇", "note": "陶溪川 · 6月", "emoji": "🏺"}
+    ],
+    "podcasts": [
+      {"title": "Anyway.FM：设计师的停顿", "meta": "65 分钟", "emoji": "🪑"},
+      {"title": "不合时宜：面包与城市", "meta": "47 分钟", "emoji": "🥐"}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "顾遥",
+    "handle": "@farawaygu",
+    "avatar": "遥",
+    "avatarColor": "#C9DDE8",
+    "bio": "把一年过成四季，也把四季装进口袋。",
+    "lastUpdated": "2026-06-11",
+    "mood": "暂时离线",
+    "books": [
+      {"title": "远山淡影", "author": "石黑一雄", "color": "#C7B69A", "accent": "#334B50"},
+      {"title": "观看之道", "author": "约翰·伯格", "color": "#202020", "accent": "#E55B4F"}
+    ],
+    "movies": [
+      {"title": "坠落的审判", "meta": "6月8日 · ★ 4.5", "emoji": "⚖️"}
+    ],
+    "places": [
+      {"city": "大理", "note": "苍山脚下 · 5月", "emoji": "⛰️"},
+      {"city": "沙溪", "note": "古镇发呆 · 5月", "emoji": "🌾"}
+    ],
+    "podcasts": [
+      {"title": "声东击西：慢一点的生活", "meta": "39 分钟", "emoji": "🐢"}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "唐沐",
+    "handle": "@mumu_tang",
+    "avatar": "沐",
+    "avatarColor": "#E6D9F2",
+    "bio": "在音乐、电影和周末早晨之间漂浮。",
+    "lastUpdated": "2026-03-18",
+    "mood": "潜水中",
+    "books": [
+      {"title": "夜晚的潜水艇", "author": "陈春成", "color": "#162D4A", "accent": "#C5D8D8"}
+    ],
+    "movies": [
+      {"title": "花样年华", "meta": "3月15日 · ★ 5.0", "emoji": "🌹"}
+    ],
+    "places": [
+      {"city": "香港", "note": "深水埗 · 2月", "emoji": "🚋"}
+    ],
+    "podcasts": [
+      {"title": "日谈公园：王家卫的时间", "meta": "71 分钟", "emoji": "🎙️"}
+    ]
+  },
+  {
+    "id": 5,
+    "name": "周予安",
+    "handle": "@anyanzhou",
+    "avatar": "安",
+    "avatarColor": "#F4E2AE",
+    "bio": "刚从海边回来，开始整理夏天的照片。",
+    "lastUpdated": "2026-07-10",
+    "mood": "电量满格",
+    "books": [
+      {"title": "海边的卡夫卡", "author": "村上春树", "color": "#173B4D", "accent": "#F5D88D"},
+      {"title": "云边有个小卖部", "author": "张嘉佳", "color": "#EABF9F", "accent": "#5F3D35"}
+    ],
+    "movies": [
+      {"title": "宇宙探索编辑部", "meta": "昨天 · ★ 4.5", "emoji": "🪐"}
+    ],
+    "places": [
+      {"city": "平潭", "note": "追一场蓝眼泪 · 7月", "emoji": "🌌"}
+    ],
+    "podcasts": [
+      {"title": "故事FM：夏天的来信", "meta": "36 分钟", "emoji": "📮"}
+    ]
+  },
+  {
+    "id": 6,
+    "name": "许知行",
+    "handle": "@walkwithxu",
+    "avatar": "知",
+    "avatarColor": "#CDE7E2",
+    "bio": "白天写代码，晚上研究城市的灯。",
+    "lastUpdated": "2026-06-25",
+    "mood": "慢慢恢复中",
+    "books": [
+      {"title": "夜航西飞", "author": "柏瑞尔·马卡姆", "color": "#374D6B", "accent": "#E4C47D"}
+    ],
+    "movies": [
+      {"title": "驾驶我的车", "meta": "6月22日 · ★ 4.5", "emoji": "🚗"},
+      {"title": "燃烧", "meta": "6月18日 · ★ 4.0", "emoji": "🔥"}
+    ],
+    "places": [
+      {"city": "青岛", "note": "沿海散步 · 6月", "emoji": "⛵"}
+    ],
+    "podcasts": [
+      {"title": "硬核说：城市夜行指南", "meta": "52 分钟", "emoji": "🌃"}
+    ]
+  },
+  {
+    "id": 7,
+    "name": "苏梨",
+    "handle": "@sulittleleaf",
+    "avatar": "梨",
+    "avatarColor": "#E7D6C9",
+    "bio": "在季节交替的时候，练习不急着回答。",
+    "lastUpdated": "2026-04-20",
+    "mood": "在路上",
+    "books": [
+      {"title": "四个春天", "author": "陆庆屹", "color": "#7B8E72", "accent": "#FFF4D8"},
+      {"title": "山茶文具店", "author": "小川糸", "color": "#D8B8A8", "accent": "#4E3D3A"}
+    ],
+    "movies": [
+      {"title": "小森林", "meta": "4月17日 · ★ 5.0", "emoji": "🍃"}
+    ],
+    "places": [
+      {"city": "新西兰南岛", "note": "公路旅行 · 4月", "emoji": "🏔️"},
+      {"city": "墨尔本", "note": "咖啡和雨 · 3月", "emoji": "☕"}
+    ],
+    "podcasts": [
+      {"title": "随机波动：离开熟悉的地方", "meta": "61 分钟", "emoji": "🧳"}
+    ]
+  },
+  {
+    "id": 8,
+    "name": "沈砚",
+    "handle": "@yan_shen",
+    "avatar": "砚",
+    "avatarColor": "#D4D5D7",
+    "bio": "最近很少上线，但窗台的植物还在长。",
+    "lastUpdated": "2025-12-01",
+    "mood": "长假模式",
+    "books": [
+      {"title": "沉默的大多数", "author": "王小波", "color": "#3E454B", "accent": "#E6D5A8"}
+    ],
+    "movies": [
+      {"title": "东京物语", "meta": "11月28日 · ★ 4.5", "emoji": "🎞️"}
+    ],
+    "places": [
+      {"city": "京都", "note": "秋日散步 · 11月", "emoji": "🍁"}
+    ],
+    "podcasts": [
+      {"title": "不合时宜：暂停一下也没关系", "meta": "44 分钟", "emoji": "⏸️"}
+    ]
+  }
+]

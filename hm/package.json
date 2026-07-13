@@ -1,0 +1,10 @@
+{
+  "name": "pulseboard",
+  "version": "1.0.0",
+  "description": "A compact ArkTS social activity dashboard",
+  "dependencies": {
+    "@ohos/hvigor": "6.24.3",
+    "@ohos/hvigor-ohos-plugin": "6.24.3"
+  }
+}
+

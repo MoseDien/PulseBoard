@@ -1,0 +1,29 @@
+# OS and IDE metadata
+.DS_Store
+**/.DS_Store
+/.idea/
+/**/.idea/
+
+# Shared package caches
+/node_modules/
+/oh_modules/
+
+# Android
+/android/.gradle/
+/android/.kotlin/
+/android/**/build/
+/android/local.properties
+
+# iOS (Tuist-generated)
+/ios/Derived/
+/ios/DerivedData/
+/ios/*.xcodeproj/
+/ios/*.xcworkspace/
+
+# HarmonyOS
+/.hvigor/
+/hm/.hvigor/
+/hm/**/.hvigor/
+/hm/**/build/
+/hm/**/oh_modules/
+/hm/local.properties
