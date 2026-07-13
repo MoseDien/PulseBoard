@@ -1,5 +1,6 @@
 package com.belldien.pulseboard.data
 
+import com.belldien.pulseboard.R
 import com.belldien.pulseboard.model.*
 
 class UserRepository {
@@ -142,6 +143,15 @@ class UserRepository {
             name,
             handle,
             avatar,
+            when (id) {
+                1 -> R.drawable.avatar_1
+                2 -> R.drawable.avatar_2
+                3 -> R.drawable.avatar_3
+                4 -> R.drawable.avatar_4
+                5 -> R.drawable.avatar_5
+                6 -> R.drawable.avatar_6
+                else -> null
+            },
             color,
             bio,
             date,

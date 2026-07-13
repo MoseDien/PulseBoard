@@ -70,6 +70,7 @@ export struct HomePage {
           name: user.name,
           handle: user.handle,
           avatar: user.avatar,
+          avatarImage: user.avatarImage,
           avatarColor: user.avatarColor,
           mood: user.mood,
           lastUpdated: user.lastUpdated
@@ -104,14 +105,22 @@ export struct HomePage {
   @Builder
   Avatar(user: UserProfile, size: number) {
     Stack() {
-      Circle()
-        .width(size)
-        .height(size)
-        .fill(user.avatarColor)
-      Text(user.avatar)
-        .fontSize(size * 0.34)
-        .fontWeight(FontWeight.Bold)
-        .fontColor(INK)
+      if (user.avatarImage) {
+        Image($rawfile(user.avatarImage))
+          .width(size)
+          .height(size)
+          .objectFit(ImageFit.Cover)
+          .borderRadius(size / 2)
+      } else {
+        Circle()
+          .width(size)
+          .height(size)
+          .fill(user.avatarColor)
+        Text(user.avatar)
+          .fontSize(size * 0.34)
+          .fontWeight(FontWeight.Bold)
+          .fontColor(INK)
+      }
     }
     .width(size)
     .height(size)
@@ -169,17 +178,17 @@ export struct HomePage {
   }
 
   private nodeX(index: number): string {
-    const positions: string[] = ['3%', '48%', '22%', '66%', '8%', '54%', '30%', '70%'];
+    const positions: string[] = ['2%', '34%', '66%', '18%', '54%', '4%', '38%', '70%'];
     return positions[index % positions.length];
   }
 
   private nodeY(index: number): number {
-    const positions: number[] = [6, 12, 158, 168, 310, 300, 462, 474];
+    const positions: number[] = [8, 26, 2, 178, 198, 350, 332, 370];
     return positions[index % positions.length];
   }
 
   private canvasHeight(): number {
-    return Math.max(640, Math.ceil(this.uiState.users.length / 2) * 156 + 30);
+    return Math.max(560, Math.ceil(this.uiState.users.length / 3) * 180 + 40);
   }
 
   @Builder
@@ -209,14 +218,22 @@ export struct HomePage {
   DynamicNode(user: UserProfile, index: number) {
     Column({ space: 8 }) {
       Stack() {
-        Circle()
-          .width(this.avatarSize(user.id))
-          .height(this.avatarSize(user.id))
-          .fill(user.avatarColor)
-        Text(user.avatar)
-          .fontSize(28)
-          .fontWeight(FontWeight.Bold)
-          .fontColor(INK)
+        if (user.avatarImage) {
+          Image($rawfile(user.avatarImage))
+            .width(this.avatarSize(user.id))
+            .height(this.avatarSize(user.id))
+            .objectFit(ImageFit.Cover)
+            .borderRadius(this.avatarSize(user.id) / 2)
+        } else {
+          Circle()
+            .width(this.avatarSize(user.id))
+            .height(this.avatarSize(user.id))
+            .fill(user.avatarColor)
+          Text(user.avatar)
+            .fontSize(28)
+            .fontWeight(FontWeight.Bold)
+            .fontColor(INK)
+        }
       }
       .width(this.avatarSize(user.id) + 10)
       .height(this.avatarSize(user.id) + 10)

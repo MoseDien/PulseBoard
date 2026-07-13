@@ -8,6 +8,7 @@ data class UserProfile(
     val name: String,
     val handle: String,
     val avatar: String,
+    val avatarRes: Int?,
     val avatarColor: Long,
     val bio: String,
     val lastUpdated: String,

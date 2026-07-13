@@ -4,14 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -25,7 +23,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -36,6 +38,9 @@ private val Page = Color(0xFFF8F7F2)
 private val Ink = Color(0xFF24302A)
 private val Muted = Color(0xFF78817A)
 private val Fresh = Color(0xFF3B8B5C)
+private val Stale = Color(0xFFA8AAA6)
+private val AvatarScales = listOf(0.90f, 1.12f, 0.98f, 1.16f, 0.86f, 1.08f, 0.94f, 1.14f)
+private val AvatarOffsets = listOf(-8, 6, 10, -10, 8, -5, -7, 9)
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -103,37 +108,55 @@ private fun HomeScreen(
             ) {
                 items(state.users, key = { it.id }) { UserRow(it, openUser) }
             }
-        else
-            LazyVerticalGrid(
-                GridCells.Fixed(2),
+        else {
+            val rows =
+                state.users.chunked(3).let { users ->
+                    listOf(
+                        users.getOrNull(0).orEmpty(),
+                        users.getOrNull(1).orEmpty(),
+                        users.getOrNull(2).orEmpty(),
+                    )
+                }
+            LazyColumn(
                 Modifier.fillMaxSize().padding(pad),
-                contentPadding = PaddingValues(18.dp),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalArrangement = Arrangement.spacedBy(28.dp),
+                contentPadding = PaddingValues(horizontal = 12.dp, vertical = 18.dp),
+                verticalArrangement = Arrangement.spacedBy(18.dp),
             ) {
-                items(state.users, key = { it.id }) { UserNode(it, openUser) }
+                items(rows.size) { rowIndex ->
+                    val rowUsers = rows[rowIndex]
+                    Row(
+                        Modifier.fillMaxWidth().offset(y = (if (rowIndex == 1) 8 else -2).dp),
+                        horizontalArrangement =
+                            Arrangement.spacedBy(if (rowIndex == 1) 26.dp else 8.dp),
+                        verticalAlignment = Alignment.Top,
+                    ) {
+                        rowUsers.forEach { user ->
+                            UserNode(user, openUser, Modifier.weight(1f))
+                        }
+                    }
+                }
             }
+        }
     }
 }
 
 @Composable
-private fun UserNode(user: UserProfile, open: (Int) -> Unit) {
+private fun UserNode(user: UserProfile, open: (Int) -> Unit, modifier: Modifier = Modifier) {
+    val scale = AvatarScales[(user.id - 1) % AvatarScales.size]
     Column(
-        Modifier.fillMaxWidth().clickable { open(user.id) },
+        modifier
+            .fillMaxWidth()
+            .offset(x = AvatarOffsets[(user.id - 1) % AvatarOffsets.size].dp)
+            .clickable { open(user.id) },
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Box(
-            Modifier.size(106.dp).clip(CircleShape).background(Color(user.avatarColor)),
-            Alignment.Center,
-        ) {
-            Text(user.avatar, fontSize = 36.sp, fontWeight = FontWeight.Bold)
-        }
+        UserAvatar(user, (106 * scale).dp, (36 * scale).sp)
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(6.dp),
             modifier = Modifier.padding(top = 8.dp),
         ) {
-            StatusDots(user.lastUpdated)
+            StatusBars(user.lastUpdated)
             Text(user.name, fontWeight = FontWeight.Bold)
         }
     }
@@ -149,29 +172,58 @@ private fun UserRow(user: UserProfile, open: (Int) -> Unit) {
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Box(
-            Modifier.size(58.dp).clip(CircleShape).background(Color(user.avatarColor)),
-            Alignment.Center,
-        ) {
-            Text(user.avatar, fontSize = 22.sp, fontWeight = FontWeight.Bold)
-        }
+        UserAvatar(user, 58.dp, 22.sp)
         Column(Modifier.padding(start = 14.dp).weight(1f)) {
             Text(user.name, fontWeight = FontWeight.Bold, fontSize = 17.sp)
             Text(user.mood, color = Muted, fontSize = 13.sp)
         }
-        StatusDots(user.lastUpdated)
+        StatusBars(user.lastUpdated)
     }
 }
 
 @Composable
-private fun StatusDots(date: String) {
+private fun StatusBars(date: String) {
     val days =
         ((System.currentTimeMillis() - java.time.LocalDate.parse(date).toEpochDay() * 86400000L) /
                 86400000L)
             .coerceAtLeast(0)
-    Row(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
-        repeat(if (days <= 7) 3 else if (days <= 30) 2 else if (days <= 90) 1 else 0) {
-            Box(Modifier.size(6.dp).clip(CircleShape).background(Fresh))
+    val level = if (days <= 7) 3 else if (days <= 30) 2 else if (days <= 90) 1 else 0
+    Row(
+        modifier = Modifier.height(20.dp),
+        horizontalArrangement = Arrangement.spacedBy(3.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        listOf(10.dp, 16.dp, 13.dp).forEachIndexed { index, height ->
+            Box(
+                Modifier.width(3.dp)
+                    .height(height)
+                    .clip(RoundedCornerShape(1.5.dp))
+                    .background(if (level > index) Fresh else Stale)
+            )
+        }
+    }
+}
+
+@Composable
+private fun UserAvatar(user: UserProfile, size: Dp, fallbackFontSize: TextUnit) {
+    Box(
+        modifier = Modifier.requiredSize(size).aspectRatio(1f).clip(CircleShape),
+        contentAlignment = Alignment.Center,
+    ) {
+        if (user.avatarRes != null) {
+            Image(
+                painter = painterResource(user.avatarRes),
+                contentDescription = "${user.name}的头像",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize(),
+            )
+        } else {
+            Box(
+                Modifier.fillMaxSize().background(Color(user.avatarColor)),
+                Alignment.Center,
+            ) {
+                Text(user.avatar, fontSize = fallbackFontSize, fontWeight = FontWeight.Bold)
+            }
         }
     }
 }
@@ -204,14 +256,7 @@ private fun DetailScreen(state: DetailUiState, back: () -> Unit) {
             ) {
                 item {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Box(
-                            Modifier.size(84.dp)
-                                .clip(CircleShape)
-                                .background(Color(user.avatarColor)),
-                            Alignment.Center,
-                        ) {
-                            Text(user.avatar, fontSize = 32.sp, fontWeight = FontWeight.Bold)
-                        }
+                        UserAvatar(user, 84.dp, 32.sp)
                         Column(Modifier.padding(start = 16.dp)) {
                             Text(user.name, fontSize = 24.sp, fontWeight = FontWeight.Bold)
                             Text(user.handle, color = Muted)

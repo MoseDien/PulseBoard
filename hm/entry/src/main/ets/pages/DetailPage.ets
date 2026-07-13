@@ -87,14 +87,22 @@ export struct DetailPage {
   @Builder
   Avatar(user: UserProfile, size: number) {
     Stack() {
-      Circle()
-        .width(size)
-        .height(size)
-        .fill(user.avatarColor)
-      Text(user.avatar)
-        .fontSize(size * 0.34)
-        .fontWeight(FontWeight.Bold)
-        .fontColor(INK)
+      if (user.avatarImage) {
+        Image($rawfile(user.avatarImage))
+          .width(size)
+          .height(size)
+          .objectFit(ImageFit.Cover)
+          .borderRadius(size / 2)
+      } else {
+        Circle()
+          .width(size)
+          .height(size)
+          .fill(user.avatarColor)
+        Text(user.avatar)
+          .fontSize(size * 0.34)
+          .fontWeight(FontWeight.Bold)
+          .fontColor(INK)
+      }
     }
     .width(size)
     .height(size)

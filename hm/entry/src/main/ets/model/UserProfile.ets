@@ -22,6 +22,7 @@ export interface UserProfile {
   name: string;
   handle: string;
   avatar: string;
+  avatarImage?: string;
   avatarColor: string;
   bio: string;
   lastUpdated: string;
@@ -37,6 +38,7 @@ export interface DetailHeaderState {
   name: string;
   handle: string;
   avatar: string;
+  avatarImage?: string;
   avatarColor: string;
   mood: string;
   lastUpdated: string;

@@ -8,9 +8,7 @@ struct DetailView: View {
         ScrollView {
           VStack(alignment: .leading, spacing: 22) {
             HStack(spacing: 16) {
-              Text(user.avatar).font(.largeTitle.bold()).frame(width: 84, height: 84).background(
-                Color(hex: user.avatarColor)
-              ).clipShape(Circle())
+              UserAvatarView(user: user, size: 84, fallbackFont: .largeTitle.bold())
               VStack(alignment: .leading) {
                 Text(user.name).font(.title.bold())
                 Text(user.handle).foregroundStyle(.secondary)

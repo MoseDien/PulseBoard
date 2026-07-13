@@ -17,6 +17,7 @@ struct UserProfile: Identifiable, Hashable {
   let name: String
   let handle: String
   let avatar: String
+  let avatarImage: String?
   let avatarColor: String
   let bio: String
   let lastUpdated: Date

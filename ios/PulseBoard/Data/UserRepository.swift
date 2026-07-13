@@ -53,7 +53,14 @@ final class UserRepository: UserRepositoryProtocol {
       id, name, handle, avatar, color, bio, date, mood, books, movies, places, podcasts in
       guard let day = formatter.date(from: date) else { return nil }
       return UserProfile(
-        id: id, name: name, handle: handle, avatar: avatar, avatarColor: color, bio: bio,
+        id: id, name: name, handle: handle, avatar: avatar,
+        avatarImage: {
+          switch id {
+          case 1...3, 6: return "avatar_\(id).jpg"
+          case 4...5: return "avatar_\(id).png"
+          default: return nil
+          }
+        }(), avatarColor: color, bio: bio,
         lastUpdated: day, mood: mood,
         books: books.map { Book(title: $0, author: "最近阅读", colorHex: "#29434E") },
         movies: movies.map { MediaItem(title: $0, meta: "最近看过 · ★ 4.5", emoji: "🎬") },

@@ -25,7 +25,7 @@ let project = Project(
         ]
       ),
       sources: ["PulseBoard/**/*.swift"],
-      resources: [],
+      resources: ["PulseBoard/Resources/**"],
       dependencies: []
     )
   ]
